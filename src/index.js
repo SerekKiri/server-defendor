@@ -4,6 +4,11 @@ const config = require('./config.json');
 
 const client = new Discord.Client();
 
+const embed = new Discord.RichEmbed()
+        .setTitle(`**IT'S TIME TO STOP** :middle_finger:`)
+        .setColor(0xea5353)
+        .setImage("https://imgur.com/RniBbFr.png")
+
 if (process.env.NODE_ENV === 'production' || process.env.BOT_TOKEN !== undefined) {
   client.login(process.env.BOT_TOKEN);
 } else {
@@ -23,6 +28,7 @@ client.on('message', async (message) => {
     if (content.includes(config.forbidden.caseInsensitive[i].toLowerCase())) {
       message.delete(1000);
       debug(`Caught insensitive ${message.content}`);
+      await message.channel.send({ embed });
       deleted = true;
       break;
     }
@@ -34,6 +40,7 @@ client.on('message', async (message) => {
       if (content.includes(config.forbidden.caseSensitive[i])) {
         message.delete(1000);
         debug(`Caught sensitive ${message.content}`);
+        await message.channel.send({ embed });
         deleted = true;
         break;
       }
