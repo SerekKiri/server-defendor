@@ -5,9 +5,9 @@ const config = require('./config.json');
 const client = new Discord.Client();
 
 const embed = new Discord.RichEmbed()
-        .setTitle(`**IT'S TIME TO STOP** :middle_finger:`)
-        .setColor(0xea5353)
-        .setImage("https://imgur.com/RniBbFr.png")
+  .setTitle('**IT\'S TIME TO STOP**')
+  .setColor(0xea5353)
+  .setImage('https://imgur.com/RniBbFr.png');
 
 if (process.env.NODE_ENV === 'production' || process.env.BOT_TOKEN !== undefined) {
   client.login(process.env.BOT_TOKEN);
@@ -23,24 +23,22 @@ client.on('ready', () => {
 client.on('message', async (message) => {
   let deleted = false;
   let i = 0;
-  let content = message.content.toLowerCase();
   for (; i < config.forbidden.caseInsensitive.length; i += 1) {
-    if (content.includes(config.forbidden.caseInsensitive[i].toLowerCase())) {
+    if (message.content.toLowerCase().includes(config.forbidden.caseInsensitive[i].toLowerCase())) {
       message.delete(1000);
       debug(`Caught insensitive ${message.content}`);
-      await message.channel.send({ embed });
+      message.channel.send({ embed });
       deleted = true;
       break;
     }
   }
   if (deleted === false) {
     i = 0;
-    content = message.content;
     for (; i < config.forbidden.caseSensitive.length; i += 1) {
-      if (content.includes(config.forbidden.caseSensitive[i])) {
+      if (message.content.includes(config.forbidden.caseSensitive[i])) {
         message.delete(1000);
         debug(`Caught sensitive ${message.content}`);
-        await message.channel.send({ embed });
+        message.channel.send({ embed });
         deleted = true;
         break;
       }
