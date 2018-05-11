@@ -1,0 +1,33 @@
+{
+  "name": "server-defendor",
+  "version": "1.0.0",
+  "description": "Defending your Discord server from bad messages",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animek66/server-defendor.git"
+  },
+  "keywords": [
+    "discord",
+    "discord",
+    "bot"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/animek66/server-defendor/issues"
+  },
+  "homepage": "https://github.com/animek66/server-defendor#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "discord.js": "^11.3.2",
+    "eslint": "^4.19.1"
+  }
+}

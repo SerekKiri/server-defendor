@@ -1,0 +1,10 @@
+{
+    "forbidden": {
+        "caseInsensitive": [
+            "😂"
+        ],
+        "caseSensitive": [
+            "Xd"
+        ]
+    }
+}
