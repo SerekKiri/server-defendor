@@ -41,7 +41,7 @@ client.on('message', async (message) => {
       if (content.includes(config.forbidden.caseSensitive[i])) {
         message.delete(1000);
         debug(`Caught sensitive ${message.content}`);
-      await message.channel.send({ embed });
+        await message.channel.send({ embed });
         deleted = true;
         break;
       }
