@@ -1,4 +1,4 @@
-# Server-Defendor
+# Server-Defendor [![Build Status](https://travis-ci.org/animek66/server-defendor.svg?branch=master)](https://travis-ci.org/animek66/server-defendor)
 
 ## Add bot to your Discord server!
 ### OAuth link:
