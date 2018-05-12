@@ -4,7 +4,7 @@
   "description": "Defending your Discord server from bad messages",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --forceExit --verbose",
     "lint": "eslint --ext .js, src test",
     "lint:fix": "eslint --ext .js, --fix src test"
   },
