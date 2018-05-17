@@ -30,5 +30,4 @@ describe('test newMessage', () => {
       },
     })).toBe(false);
   });
-
-})
+});
