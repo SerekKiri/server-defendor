@@ -1,4 +1,4 @@
-const newMessage = require('../events/newMessage');
+const newMessage = require('../src/events/newMessage');
 
 describe('test newMessage', () => {
   it('"Xd" triggers deleting', () => {
